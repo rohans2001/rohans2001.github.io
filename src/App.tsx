@@ -21,7 +21,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Router basename="/Portfolio">
+      <Router>
         <div className="App">
           <AnimatePresence mode="wait">
             {loading ? (
