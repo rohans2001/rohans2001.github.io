@@ -5,7 +5,6 @@ import { ThemeProvider } from './context/ThemeContext';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import PageLoader from './components/PageLoader';
-import ThemeToggle from './components/ThemeToggle';
 import './App.css';
 
 function App() {
@@ -22,7 +21,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename="/qa-portfolio">
         <div className="App">
           <AnimatePresence mode="wait">
             {loading ? (
@@ -33,7 +32,6 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-                <ThemeToggle />
               </>
             )}
           </AnimatePresence>
