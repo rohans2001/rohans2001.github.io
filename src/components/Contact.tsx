@@ -10,9 +10,9 @@ import './Contact.css';
 // EmailJS Configuration
 // To use EmailJS, sign up at https://www.emailjs.com/
 // Then replace these with your actual IDs from the EmailJS dashboard
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID = 'service_luvtlyr';
+const EMAILJS_TEMPLATE_ID = 'template_f3kajrs';
+const EMAILJS_PUBLIC_KEY = 'Bjz2vGbo6OJ2TtOwY';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -37,10 +37,33 @@ const Contact = () => {
 
         try {
             // Check if EmailJS is configured
+            
+            await emailjs.send(
+                    EMAILJS_SERVICE_ID,
+                    EMAILJS_TEMPLATE_ID,
+                    {
+                        from_name: formData.name,
+                        from_email: formData.email,
+                        subject: formData.subject,
+                        message: formData.message,
+                        to_name: 'QA Engineer',
+                    },
+                    EMAILJS_PUBLIC_KEY
+                );
+
+                setToast({
+                    message: 'Message sent successfully! I will get back to you soon.',
+                    type: 'success'
+                });
+                setFormData({ name: '', email: '', subject: '', message: '' });
+
+                return;
+
+
             if (
-                EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' ||
-                EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID' ||
-                EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY'
+                EMAILJS_SERVICE_ID === 'service_luvtlyr' ||
+                EMAILJS_TEMPLATE_ID === 'template_f3kajrs' ||
+                EMAILJS_PUBLIC_KEY === 'Bjz2vGbo6OJ2TtOwY'
             ) {
                 // Demo mode - show success without actually sending
                 await new Promise(resolve => setTimeout(resolve, 1000));
