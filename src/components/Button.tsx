@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import type { ReactNode, ButtonHTMLAttributes } from 'react';
 import './Button.css';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onAnimationEnd'> {
   variant?: 'primary' | 'secondary' | 'outline';
   children: ReactNode;
   icon?: ReactNode;
