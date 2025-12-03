@@ -22,23 +22,16 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-    const [theme, setTheme] = useState<Theme>(() => {
-        // Get theme from localStorage or default to dark
-        const savedTheme = localStorage.getItem('theme') as Theme;
-        return savedTheme || 'dark';
-    });
+    const [theme] = useState<Theme>('dark');
 
     useEffect(() => {
-        // Apply theme class to document
+        // Always apply dark mode
         document.documentElement.classList.remove('light-mode', 'dark-mode');
-        document.documentElement.classList.add(`${theme}-mode`);
-
-        // Save to localStorage
-        localStorage.setItem('theme', theme);
-    }, [theme]);
+        document.documentElement.classList.add('dark-mode');
+    }, []);
 
     const toggleTheme = () => {
-        setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+        // No-op function since theme is locked to dark
     };
 
     return (
