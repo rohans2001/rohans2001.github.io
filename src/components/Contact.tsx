@@ -37,27 +37,27 @@ const Contact = () => {
 
         try {
             // Check if EmailJS is configured
-            
+
             await emailjs.send(
-                    EMAILJS_SERVICE_ID,
-                    EMAILJS_TEMPLATE_ID,
-                    {
-                        from_name: formData.name,
-                        from_email: formData.email,
-                        subject: formData.subject,
-                        message: formData.message,
-                        to_name: 'QA Engineer',
-                    },
-                    EMAILJS_PUBLIC_KEY
-                );
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    to_name: 'QA Engineer',
+                },
+                EMAILJS_PUBLIC_KEY
+            );
 
-                setToast({
-                    message: 'Message sent successfully! I will get back to you soon.',
-                    type: 'success'
-                });
-                setFormData({ name: '', email: '', subject: '', message: '' });
+            setToast({
+                message: 'Message sent successfully! I will get back to you soon.',
+                type: 'success'
+            });
+            setFormData({ name: '', email: '', subject: '', message: '' });
 
-                return;
+            return;
 
 
             if (
@@ -120,7 +120,7 @@ const Contact = () => {
         {
             icon: <FaLinkedin />,
             label: 'LinkedIn',
-            value: 'linkedin.com/in/rohansamanta04',
+            value: 'linkedin.com/rohansamanta04',
             link: 'https://www.linkedin.com/in/rohansamanta04/'
         },
         {

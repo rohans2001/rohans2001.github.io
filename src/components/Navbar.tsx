@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaBug, FaCheckCircle } from 'react-icons/fa';
+import { FaBug, FaCheckCircle, FaHome, FaUser, FaCode, FaBriefcase, FaEnvelope } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -60,59 +60,91 @@ const Navbar = () => {
     };
 
     return (
-        <motion.nav
-            className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
-            <div className="container">
-                <div className="navbar-content">
-                    <motion.div
-                        className="navbar-logo"
-                        whileHover={{ scale: 1.05 }}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        <FaBug className="logo-icon" />
-                        <span className="logo-text">
-                            Rohan<span className="gradient-text"> Samanta</span>
-                        </span>
-                    </motion.div>
+        <>
+            <motion.nav
+                className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                <div className="container">
+                    <div className="navbar-content">
+                        <motion.div
+                            className="navbar-logo"
+                            whileHover={{ scale: 1.05 }}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <FaBug className="logo-icon" />
+                            <span className="logo-text">
+                                Rohan<span className="gradient-text"> Samanta</span>
+                            </span>
+                        </motion.div>
 
-                    <div className="navbar-menu">
-                        {navItems.map((item, index) => (
+                        {/* Desktop Menu */}
+                        <div className="navbar-menu">
+                            {navItems.map((item, index) => (
+                                <motion.a
+                                    key={item.name}
+                                    href={item.href}
+                                    className={`navbar-link ${activeSection === item.href.substring(1) ? 'active' : ''}`}
+                                    onClick={(e) => handleNavClick(e, item.href)}
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.1 }}
+                                    whileHover={{ scale: 1.1 }}
+                                >
+                                    {item.name}
+                                </motion.a>
+                            ))}
+                        </div>
+
+                        <div className="navbar-end">
                             <motion.a
-                                key={item.name}
-                                href={item.href}
-                                className={`navbar-link ${activeSection === item.href.substring(1) ? 'active' : ''}`}
-                                onClick={(e) => handleNavClick(e, item.href)}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ scale: 1.1 }}
+                                href="#contact"
+                                className="navbar-cta desktop-only"
+                                onClick={(e) => handleNavClick(e, '#contact')}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                             >
-                                {item.name}
+                                <FaCheckCircle />
+                                <span>Hire Me</span>
                             </motion.a>
-                        ))}
+                        </div>
                     </div>
-
-                    <motion.a
-                        href="#contact"
-                        className="navbar-cta"
-                        onClick={(e) => handleNavClick(e, '#contact')}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <FaCheckCircle />
-                        <span>Hire Me</span>
-                    </motion.a>
                 </div>
+            </motion.nav>
+
+            {/* Bottom Navigation for Mobile */}
+            <div className="bottom-nav mobile-only">
+                {navItems.map((item) => {
+                    let Icon;
+                    switch (item.name) {
+                        case 'Home': Icon = FaHome; break;
+                        case 'About': Icon = FaUser; break;
+                        case 'Skills': Icon = FaCode; break;
+                        case 'Experience': Icon = FaBriefcase; break;
+                        case 'Contact': Icon = FaEnvelope; break;
+                        default: Icon = FaHome;
+                    }
+
+                    return (
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            className={`bottom-nav-item ${activeSection === item.href.substring(1) ? 'active' : ''}`}
+                            onClick={(e) => handleNavClick(e, item.href)}
+                        >
+                            <Icon className="nav-icon" />
+                            <span className="nav-label">{item.name}</span>
+                        </a>
+                    );
+                })}
             </div>
-        </motion.nav>
+        </>
     );
 };
 

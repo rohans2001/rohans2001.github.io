@@ -113,6 +113,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
   /* Account for fixed navbar */
+  overflow-x: hidden;
 }
 
 body {
@@ -125,6 +126,7 @@ body {
   color: var(--color-text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
@@ -134,8 +136,8 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background:
     radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
@@ -348,24 +350,52 @@ p {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+
+  .container,
+  .container-wide {
+    padding: 0 var(--spacing-md);
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
   .section {
     padding: var(--spacing-xl) 0;
   }
 
-  .container {
+  .container,
+  .container-wide {
     padding: 0 var(--spacing-sm);
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   h2 {
     font-size: 2rem;
   }
 
+  h3 {
+    font-size: 1.5rem;
+  }
+
   p {
     font-size: 1rem;
+  }
+
+  /* Stack grid layouts by default on tablet/mobile */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
   }
 }
