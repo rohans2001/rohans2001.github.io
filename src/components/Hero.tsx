@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { SiSelenium, SiCypress, SiJest } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { SiSelenium, SiCypress, SiApachejmeter } from 'react-icons/si';
 import Button from './Button';
 import './Hero.css';
 
@@ -8,7 +8,7 @@ const Hero = () => {
     const floatingIcons = [
         { Icon: SiSelenium, color: '#43B02A', delay: 0 },
         { Icon: SiCypress, color: '#17202C', delay: 0.2 },
-        { Icon: SiJest, color: '#C21325', delay: 0.4 },
+        { Icon: SiApachejmeter, color: '#C21325', delay: 0.4 },
     ];
 
     return (
@@ -46,7 +46,7 @@ const Hero = () => {
 
                         <div className="hero-stats glass">
                             <div className="stat">
-                                <div className="stat-value gradient-text">500+</div>
+                                <div className="stat-value gradient-text">100+</div>
                                 <div className="stat-label">Tests Automated</div>
                             </div>
                             <div className="stat-divider"></div>
@@ -56,15 +56,15 @@ const Hero = () => {
                             </div>
                             <div className="stat-divider"></div>
                             <div className="stat">
-                                <div className="stat-value gradient-text">5+</div>
+                                <div className="stat-value gradient-text">1+</div>
                                 <div className="stat-label">Years Experience</div>
                             </div>
                         </div>
 
                         <div className="hero-actions">
-                            <Button variant="primary" icon={<FaArrowRight />}>
+                            {/* <Button variant="primary" icon={<FaArrowRight />}>
                                 View My Work
-                            </Button>
+                            </Button> */}
                             <Button variant="outline">
                                 Download CV
                             </Button>
@@ -72,7 +72,7 @@ const Hero = () => {
 
                         <div className="hero-social">
                             <motion.a
-                                href="https://github.com"
+                                href="https://github.com/rohans2001"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-link"
@@ -81,7 +81,7 @@ const Hero = () => {
                                 <FaGithub />
                             </motion.a>
                             <motion.a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/rohansamanta04/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-link"
@@ -90,7 +90,7 @@ const Hero = () => {
                                 <FaLinkedin />
                             </motion.a>
                             <motion.a
-                                href="mailto:qa@example.com"
+                                href="mailto:rohansamanta559@gmail.com"
                                 className="social-link"
                                 whileHover={{ scale: 1.2, rotate: 5 }}
                             >

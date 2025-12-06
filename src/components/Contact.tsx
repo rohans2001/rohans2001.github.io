@@ -108,26 +108,26 @@ const Contact = () => {
         {
             icon: <FaEnvelope />,
             label: 'Email',
-            value: 'qa.engineer@example.com',
-            link: 'mailto:qa.engineer@example.com'
+            value: 'rohansamanta559@gmail.com',
+            link: 'mailto:rohansamanta559@gmail.com'
         },
         {
             icon: <FaPhone />,
             label: 'Phone',
-            value: '+1 (555) 123-4567',
-            link: 'tel:+15551234567'
+            value: '+91 736592983',
+            link: 'tel:+91736592983'
         },
         {
             icon: <FaLinkedin />,
             label: 'LinkedIn',
-            value: 'linkedin.com/in/qa-engineer',
-            link: 'https://linkedin.com'
+            value: 'linkedin.com/in/rohansamanta04',
+            link: 'https://www.linkedin.com/in/rohansamanta04/'
         },
         {
             icon: <FaGithub />,
             label: 'GitHub',
-            value: 'github.com/qa-engineer',
-            link: 'https://github.com'
+            value: 'github.com/rohans2001',
+            link: 'https://github.com/rohans2001'
         }
     ];
 

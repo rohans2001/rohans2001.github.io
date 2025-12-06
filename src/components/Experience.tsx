@@ -5,34 +5,34 @@ import './Experience.css';
 
 const Experience = () => {
     const experiences = [
+        // {
+        //     company: 'Tech Solutions Inc.',
+        //     role: 'Senior QA Engineer',
+        //     period: '2021 - Present',
+        //     achievements: [
+        //         'Reduced bug escape rate by 45% through comprehensive test automation',
+        //         'Built CI/CD pipeline reducing deployment time by 60%',
+        //         'Mentored team of 5 junior QA engineers',
+        //         'Implemented performance testing framework'
+        //     ],
+        //     color: 'var(--color-primary)'
+        // },
         {
-            company: 'Tech Solutions Inc.',
-            role: 'Senior QA Engineer',
-            period: '2021 - Present',
+            company: 'Sentientgeeks Pvt. Ltd.',
+            role: 'Junior QA Analyst',
+            period: '2025 - Present',
             achievements: [
-                'Reduced bug escape rate by 45% through comprehensive test automation',
-                'Built CI/CD pipeline reducing deployment time by 60%',
-                'Mentored team of 5 junior QA engineers',
-                'Implemented performance testing framework'
-            ],
-            color: 'var(--color-primary)'
-        },
-        {
-            company: 'Digital Innovations Ltd.',
-            role: 'QA Engineer',
-            period: '2019 - 2021',
-            achievements: [
-                'Automated 200+ test cases using Selenium and Cypress',
-                'Improved test coverage from 60% to 95%',
+                'Automated 100+ test cases using Selenium.',
+                'Improved test coverage from 60% to 90%',
                 'Collaborated with developers on TDD practices',
                 'Established QA best practices and documentation'
             ],
             color: 'var(--color-secondary)'
         },
         {
-            company: 'StartUp Ventures',
-            role: 'Junior QA Engineer',
-            period: '2018 - 2019',
+            company: 'Sentientgeeks Pvt. Ltd.',
+            role: 'Junior QA Intern',
+            period: '2024 - 2025',
             achievements: [
                 'Created comprehensive test plans for web applications',
                 'Performed manual and automated testing',

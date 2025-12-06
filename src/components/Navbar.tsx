@@ -79,7 +79,7 @@ const Navbar = () => {
                     >
                         <FaBug className="logo-icon" />
                         <span className="logo-text">
-                            QA<span className="gradient-text">Engineer</span>
+                            Rohan<span className="gradient-text"> Samanta</span>
                         </span>
                     </motion.div>
 
