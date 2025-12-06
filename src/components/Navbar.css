@@ -113,10 +113,75 @@
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+/* Bottom Navigation */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--glass-border);
+    padding: 0.75rem 1rem;
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: all var(--transition-normal);
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    position: relative;
+    width: 60px;
+}
+
+.bottom-nav-item .nav-icon {
+    font-size: 1.5rem;
+    transition: all var(--transition-normal);
+}
+
+.bottom-nav-item.active {
+    color: var(--color-primary);
+}
+
+.bottom-nav-item.active .nav-icon {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+.bottom-nav-item:hover {
+    color: var(--color-text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.bottom-nav-item.active:hover {
+    color: var(--color-primary);
+}
+
+/* Tablet & Mobile Responsive */
+@media (max-width: 1024px) {
     .navbar-menu {
         display: none;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .bottom-nav.mobile-only {
+        display: flex;
     }
 
     .navbar-logo {
@@ -127,7 +192,12 @@
         font-size: 1.5rem;
     }
 
-    .navbar-cta span {
-        display: none;
+    /* Add padding to body to prevent content being hidden behind bottom nav */
+    :root {
+        --bottom-nav-height: 80px;
+    }
+
+    body {
+        padding-bottom: var(--bottom-nav-height);
     }
 }
