@@ -14,7 +14,7 @@ const PageLoader = () => {
                     <div className="scan-box glass">
                         <div className="scan-line-loader"></div>
                         <div className="loader-text">
-                            <span className="loader-title gradient-text">QA Portfolio</span>
+                            <span className="loader-title gradient-text">Please Wait</span>
                             <span className="loader-subtitle">Running Quality Checks...</span>
                         </div>
                     </div>

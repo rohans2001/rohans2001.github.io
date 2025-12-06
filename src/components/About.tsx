@@ -57,21 +57,21 @@ const About = () => {
                         <Card variant="glass-strong">
                             <h3 className="gradient-text">Quality Assurance Engineer</h3>
                             <p>
-                                With over 5 years of experience in software quality assurance,
-                                I specialize in creating comprehensive test strategies that ensure
-                                product excellence. My expertise spans automated testing, performance
+                                With over 1 year of experience in software quality assurance,
+                                I'm developing expertise in creating effective test strategies that ensure
+                                product excellence. My skills span automated testing, performance
                                 optimization, and continuous integration.
                             </p>
                             <p>
-                                I'm passionate about finding bugs before users do, implementing
+                                I'm passionate about finding bugs before users do, building
                                 robust testing frameworks, and collaborating with development teams
-                                to build better software. My approach combines technical expertise
-                                with a keen eye for detail and user experience.
+                                to deliver quality software. My approach combines technical knowledge
+                                with attention to detail and user experience.
                             </p>
                             <p>
-                                When I'm not hunting bugs, I contribute to open-source testing tools,
-                                mentor junior QA engineers, and stay updated with the latest testing
-                                methodologies and automation frameworks.
+                                I actively contribute to open-source testing tools and stay updated
+                                with the latest testing methodologies and automation frameworks,
+                                continuously expanding my expertise in quality assurance.
                             </p>
                         </Card>
                     </motion.div>

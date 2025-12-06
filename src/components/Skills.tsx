@@ -3,15 +3,13 @@ import Card from './Card';
 import {
     SiSelenium,
     SiCypress,
-    SiJest,
-    SiPuppeteer,
     SiJavascript,
     SiTypescript,
-    SiPython,
     SiPostman,
     SiJenkins,
-    SiDocker,
-    SiGit
+    SiGit,
+    SiBurpsuite,
+    SiApachejmeter
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import './Skills.css';
@@ -23,19 +21,18 @@ const Skills = () => {
             color: 'var(--color-primary)',
             skills: [
                 { name: 'Selenium', icon: <SiSelenium />, level: 95 },
-                { name: 'Cypress', icon: <SiCypress />, level: 90 },
-                { name: 'Jest', icon: <SiJest />, level: 85 },
-                { name: 'Puppeteer', icon: <SiPuppeteer />, level: 80 },
+                { name: 'JMeter', icon: <SiApachejmeter />, level: 85 },
+                { name: 'Cypress', icon: <SiCypress />, level: 50 },
+                { name: 'BurpSuite', icon: <SiBurpsuite />, level: 40 },
             ]
         },
         {
             title: 'Programming',
             color: 'var(--color-secondary)',
             skills: [
-                { name: 'JavaScript', icon: <SiJavascript />, level: 90 },
-                { name: 'TypeScript', icon: <SiTypescript />, level: 85 },
-                { name: 'Python', icon: <SiPython />, level: 80 },
-                { name: 'Java', icon: <FaJava />, level: 75 },
+                { name: 'Java', icon: <FaJava />, level: 80 },
+                { name: 'JavaScript', icon: <SiJavascript />, level: 60 },
+                { name: 'TypeScript', icon: <SiTypescript />, level: 50 },
             ]
         },
         {
@@ -43,9 +40,8 @@ const Skills = () => {
             color: 'var(--color-warning)',
             skills: [
                 { name: 'Postman', icon: <SiPostman />, level: 90 },
-                { name: 'Jenkins', icon: <SiJenkins />, level: 85 },
-                { name: 'Docker', icon: <SiDocker />, level: 80 },
-                { name: 'Git', icon: <SiGit />, level: 95 },
+                { name: 'Git', icon: <SiGit />, level: 80 },
+                { name: 'Jenkins', icon: <SiJenkins />, level: 60 },
             ]
         }
     ];
